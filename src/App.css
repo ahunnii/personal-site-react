@@ -31,7 +31,8 @@
 	color: rgb(var(--main));
 }
 
-body {
+body,
+.App {
 	background: black;
 	color: rgb(var(--main));
 	font-family: "Roboto Mono", monospace;
@@ -90,6 +91,7 @@ strong {
 	overflow: hidden;
 	position: relative;
 	min-height: 350px;
+	/* z-index: -1; */
 }
 
 .output {
@@ -103,8 +105,9 @@ strong {
 	z-index: -1;
 }
 .frame * {
-	cursor: none !important;
+	/* cursor: none !important; */
 	font-weight: normal;
+	z-index: inherit;
 }
 
 @-webkit-keyframes crt-output {
@@ -411,11 +414,11 @@ label {
 	z-index: 0;
 }
 
-.pip-foot li {
+.pip-foot span {
 	display: contents;
 }
 
-.pip-foot a {
+.pip-foot span {
 	border-radius: 0;
 	display: block;
 	float: left;
@@ -426,7 +429,8 @@ label {
 	position: relative;
 	line-height: 25px;
 }
-.pip-foot a::after {
+/* .pip-foot button::after, */
+.pip-foot span::after {
 	content: "";
 	position: absolute;
 	background: var(--black);
@@ -437,24 +441,31 @@ label {
 	z-index: -1;
 }
 
-a:focus {
+a:focus,
+.pip-foot span:focus {
 	outline: 1px solid;
 	outline-offset: -1px;
 }
 
+/* .pip-foot button {
+	border: 0px !important;
+} */
 a,
 label,
-label::before {
+label::before,
+.pip-foot span {
 	transition: all 0.1s;
 	outline: 0.5px solid transparent;
 }
 
 a:hover,
+.pip-foot span:hover,
 a.active,
 li.active a {
 	outline: 2px solid currentColor;
 }
-a:hover {
+a:hover,
+.pip-foot span:hover {
 	background: rgba(var(--alt), 0.25);
 }
 
@@ -527,7 +538,7 @@ a:hover {
 	pointer-events: none;
 }
 
-.frame button {
+.frame button:not(.pip-nav-btn) {
 	-webkit-appearance: none;
 	appearance: none;
 	background: transparent;
@@ -537,8 +548,8 @@ a:hover {
 	transition: all 0.1s ease;
 }
 
-.frame button:hover,
-.frame button:focus {
+.frame button:not(.pip-nav-btn):hover,
+.frame button:not(.pip-nav-btn):focus {
 	background: rgba(var(--alt), 0.25);
 	outline: 1px solid;
 }

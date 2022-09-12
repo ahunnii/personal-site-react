@@ -1,30 +1,28 @@
-import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
+import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react";
 import ConsolePage from "../components/ConsolePage";
+import Stats from "../components/Stats";
 import StatsPanel from "../components/StatsPanel.jsx";
-export default function Homepage() {
+
+export default function Nameplate() {
 	return (
 		<ConsolePage>
-			<h3 className="pip-title">Items</h3>
-			<ul className="pip-head">
-				<li>
-					<b>Wg</b> 34/125
-				</li>
-				<li>
-					<b>HP</b> 89/110
-				</li>
-				<li>
-					<span className="fade-a">
-						<b>DT</b> 21
-					</span>
-					<span className="fade-b">
-						<b>DR</b> 11
-					</span>
-				</li>
-				<li>
-					<b>Caps</b> 1721
-				</li>
-			</ul>
-			<div className="pip-body">
+			<h3 className="pip-title">Main</h3>
+			<Flex minH={"100%"} align={"center"} justify={"center"}>
+				<Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+					<Stack align={"center"}>
+						<Heading fontSize={"4xl"} textAlign={"center"}>
+							Andrew Hunn
+						</Heading>
+						<Text fontSize={"lg"} color={"gray.600"}>
+							Web Developer ✌️
+						</Text>
+					</Stack>
+					<Box rounded={"lg"} boxShadow={"lg"} p={8}></Box>
+				</Stack>
+			</Flex>
+
+			{/* <div className="pip-body">
+			
 				<ul className="options">
 					<li>
 						<input type="radio" id="radio1" name="radio" />
@@ -44,7 +42,7 @@ export default function Homepage() {
 					</li>
 				</ul>
 				<StatsPanel />
-			</div>
+			</div> */}
 		</ConsolePage>
 	);
 }
