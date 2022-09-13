@@ -3,6 +3,14 @@ import ConsolePage from "../components/ConsolePage";
 import StatsPanel from "../components/StatsPanel.jsx";
 
 export default function Misc() {
+	var r = document.querySelector(":root");
+	var colors = document.getElementsByName("colors");
+	function getColor() {
+		for (let i = 0; i < colors.length; i++) {
+			if (colors[i].checked) r.className = colors[i].value;
+		}
+	}
+
 	return (
 		<ConsolePage>
 			<h3 className="pip-title">Misc</h3>
@@ -28,7 +36,7 @@ export default function Misc() {
 					<div className="info active tab-pane fade in" id="misc-1">
 						<div className="post">
 							<p>Select HUD / Backlight Color</p>
-							<form className="colors" onChange="getColor();">
+							<form className="colors" onChange={() => getColor()}>
 								<input id="b-amber" type="radio" name="colors" value="amber" defaultChecked />
 								<label for="b-amber">Amber</label>
 								<input id="b-red" type="radio" name="colors" value="red" />
@@ -39,7 +47,7 @@ export default function Misc() {
 								<label for="b-blue">Blue</label>
 								<input id="b-white" type="radio" name="colors" value="white" />
 								<label for="b-white">White</label>
-								<input id="b-black" type="radio" name="colors" value="black" onChange="getColor();" />
+								<input id="b-black" type="radio" name="colors" value="black" onChange={() => getColor()} />
 								<label for="b-black">Science!</label>
 							</form>
 						</div>

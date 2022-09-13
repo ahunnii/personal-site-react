@@ -1,0 +1,11 @@
+[
+	{
+		"title": "DreamWalker Studios",
+		"brief": "An e-commerce site specializing in 3D printing services",
+		"thumbnail": "./dreamwalker.png",
+		"about": "DreamWalker Studios is an e-commerce platform catered towards offering customers a variety of licensed figures available for 3D printing.",
+		"technologies": ["React", "Strapi", "JavaScript", "Sass"],
+		"site": "https://dreamwalkerstudios.netlify.app/",
+		"github": "https://github.com/ahunnii/dreamwalker-studios"
+	}
+]
