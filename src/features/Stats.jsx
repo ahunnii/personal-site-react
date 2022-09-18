@@ -1,4 +1,4 @@
-export default function Stats({}) {
+export default function Stats() {
 	return (
 		<ul className="pip-head">
 			<li>

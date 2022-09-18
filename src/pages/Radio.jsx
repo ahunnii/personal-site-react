@@ -1,10 +1,6 @@
-import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
-import ConsolePage from "../components/ConsolePage";
-import StatsPanel from "../components/StatsPanel.jsx";
-
 export default function Radio() {
 	return (
-		<ConsolePage>
+		<div className="tab-pane fade in">
 			<h3 className="pip-title">Radio</h3>
 			<div className="pip-body">
 				<ul className="options">
@@ -23,6 +19,6 @@ export default function Radio() {
 					<div className="post">No data.</div>
 				</div>
 			</div>
-		</ConsolePage>
+		</div>
 	);
 }
