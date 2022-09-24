@@ -98,6 +98,7 @@ export default function About({ profile }) {
 							rounded={"lg"}
 							// mt={-12}
 							pos={"relative"}
+							display={{ base: "none", md: "flex" }}
 							height={"230px"}>
 							{profile && <Image src={profile.url} />}
 						</Box>
