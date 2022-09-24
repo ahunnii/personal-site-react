@@ -23,13 +23,13 @@ const query = `
 `;
 
 const getProjectData = () => {
-	const address = `https://graphql.contentful.com/content/v1/spaces/${import.meta.env.VITE_CONTENTFUL_SPACE}/`;
+	const address = `https://graphql.contentful.com/content/v1/spaces/2dqvp2akg9y8/`;
 
 	return fetch(address, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
-			Authorization: "Bearer " + import.meta.env.VITE_CONTENTFUL_TOKEN,
+			Authorization: "Bearer " + "cX3ICsEeWxQcUMY_A6bfZHMCEW5hrcvXU0-oIX3PRP8",
 		},
 		body: JSON.stringify({ query }),
 	})
@@ -61,7 +61,7 @@ const getSiteData = () => {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
-			Authorization: "Bearer " + import.meta.env.VITE_CONTENTFUL_TOKEN,
+			Authorization: "Bearer " + "cX3ICsEeWxQcUMY_A6bfZHMCEW5hrcvXU0-oIX3PRP8",
 		},
 		body: JSON.stringify({ query }),
 	})
