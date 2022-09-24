@@ -1,4 +1,4 @@
-import { Box, Center, chakra, SimpleGrid } from "@chakra-ui/react";
+import { Box, Center, chakra, Flex, SimpleGrid } from "@chakra-ui/react";
 import { useState } from "react";
 
 import { ProjectCard, ProjectDetails, Stats } from "../features";
@@ -11,23 +11,31 @@ export default function Featured({ projects }) {
 			<chakra.div className="tab-pane fade in" h="100%">
 				<h3 className="pip-title">Featured</h3>
 				<Stats />
-				<chakra.div className="stats-page" w={"100%"}>
-					<h4>Select a project to view</h4>
-
+				{/* <chakra.div className="stats-page" w={"100%"} pt={{ base: 20, md: 0 }}>
 					<div className="right-options">
 						<a href="#" className="disabled">
 							(4) View All
 						</a>
 					</div>
-				</chakra.div>
+				</chakra.div> */}
 
-				<Center w={"100%"} h="100%" className="pip-body">
+				<Center w={"100%"} h={{ base: "100%", md: "100%" }} className="pip-body" pt={{ base: 20, md: 0 }}>
+					{/* <h4>Select a project to view</h4> */}
 					{!selected && (
-						<SimpleGrid minChildWidth="250px" spacing={10} w="100%">
+						<SimpleGrid
+							columns={{ base: 1, md: 2, lg: 3 }}
+							spacing={{ base: 0, md: 2 }}
+							w={"100%"}
+							h={{ base: "100%", md: "75%", lg: "100%" }}
+							overflowY={{ base: "scroll" }}>
 							{projects && (
 								<>
 									{projects.map((project) => (
-										<Box onClick={() => setSelected(project)} my={5}>
+										<Box
+											onClick={() => setSelected(project)}
+											my={{ base: 0, md: 0 }}
+											display={"inline-flex"}
+											justifyContent={"center"}>
 											<ProjectCard {...project} />
 										</Box>
 									))}

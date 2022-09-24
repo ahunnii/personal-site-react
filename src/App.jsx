@@ -41,7 +41,7 @@ function App() {
 				<Flex minH={"100vh"} align={"center"} justify={"center"}>
 					<Box className="frame">
 						<Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
-							<Box className="piece output container" p={8}>
+							<Box className="piece output " p={8}>
 								<Tabs className="pipboy">
 									<Navigation />
 									<TabPanels className="tab-content">
@@ -57,7 +57,7 @@ function App() {
 										<TabPanel>
 											<About profile={nameplateData?.profile} />
 										</TabPanel>
-										<TabPanel>
+										<TabPanel h={{ base: "100%", md: "100%" }}>
 											<Contact />
 										</TabPanel>
 										<TabPanel>
