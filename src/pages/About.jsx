@@ -1,5 +1,5 @@
 import { Box, Center, Flex, Image, Stack, Text } from "@chakra-ui/react";
-
+import { Stats } from "../features";
 export default function About({ profile }) {
 	return (
 		<Box
@@ -10,51 +10,43 @@ export default function About({ profile }) {
 			flexDir={"column"}
 			justifyContent={"center"}>
 			<h3 className="pip-title">ABOUT</h3>
-			<ul className="pip-head">
-				<li>
-					<b>LVL</b> 27
-				</li>
-				<li>
-					<b>HP</b> 89/110
-				</li>
-				<li>
-					<b>AP</b> 38/40
-				</li>
-				<li>
-					<b>XP</b> 73.8%
-				</li>
-			</ul>
+			<Stats />
 			<Center
 				w={"100%"}
 				h={{ base: "100%", md: "100%" }}
 				className="pip-body"
-				mt={{ base: "4rem", md: 0 }}
+				mt={{ base: "2rem", md: 0 }}
+				pt={{ base: "1rem", md: 0 }}
 				overflowY={"scroll"}>
-				<Stack direction={{ base: "column", md: "row" }} maxH={"75vh"} pt={{ base: "4rem", md: 0 }}>
-					<Box maxW={{ base: "100%", md: "75%" }}>
+				<Stack direction={{ base: "column", md: "row" }} maxH={"75vh"} pt={{ base: "2rem", md: 0 }}>
+					<Box maxW={{ base: "100%", md: "70%" }}>
 						<Text> Hi, my name is Andrew Hunn</Text>
 						{profile && (
-							<Box w={{ base: "100%", sm: "75%", md: "100%" }} display={{ base: "flex", md: "none" }}>
-								<Box
-									rounded={"lg"}
-									my={3}
-									pos={"relative"}
-									height={"220px"}
-									_after={{
-										transition: "all .3s ease",
-										content: '""',
-										w: "full",
-										h: "full",
-										pos: "absolute",
-										top: 5,
-										left: 0,
-										backgroundImage: `url(${profile.url})`,
-										filter: "blur(15px)",
-										zIndex: -1,
-									}}>
-									{profile && <Image src={profile.url} height={{ base: "auto", sm: "230px" }} />}
-								</Box>
-							</Box>
+							// <Box
+							// 	w={{ base: "100%", sm: "75%", md: "100%" }}
+							// 	display={{ base: "inline", md: "none" }}
+							// 	height={{ base: "auto", md: "230px" }}>
+							// 	<Box
+							// 		rounded={"lg"}
+							// 		my={3}
+							// 		pos={"relative"}
+							// 		height={{ base: "auto", md: "230px" }}
+							// 		_after={{
+							// 			transition: "all .3s ease",
+							// 			content: '""',
+							// 			w: "full",
+							// 			h: "full",
+							// 			pos: "absolute",
+							// 			top: 5,
+							// 			left: 0,
+							// 			backgroundImage: `url(${profile.url})`,
+							// 			filter: "blur(15px)",
+							// 			zIndex: -1,
+							// 		}}>
+							// 		{profile && <Image src={profile.url} />}
+							// 	</Box>
+							// </Box>
+							<Image src={profile.url} my={2} display={{ base: "inline", md: "none" }} />
 						)}
 						<Text mt={5}>
 							Nice to e-meet you! Before you scroll to the projects, I wanted to take this opportunity to tell you a bit
@@ -80,26 +72,34 @@ export default function About({ profile }) {
 						</Text>
 					</Box>
 					{profile && (
-						<Box w={{ base: "75%", md: "100%" }} display={{ base: "none", md: "flex" }}>
-							<Box
-								rounded={"lg"}
-								// mt={-12}
-								pos={"relative"}
-								height={"230px"}
-								_after={{
-									transition: "all .3s ease",
-									content: '""',
-									w: "full",
-									h: "full",
-									pos: "absolute",
-									top: 5,
-									left: 0,
-									backgroundImage: `url(${profile.url})`,
-									filter: "blur(15px)",
-									zIndex: -1,
-								}}>
-								{profile && <Image src={profile.url} />}
-							</Box>
+						// <Box w={{ base: "75%", md: "100%" }} display={{ base: "none", md: "flex" }}>
+						// 	<Box
+						// 		rounded={"lg"}
+						// 		// mt={-12}
+						// 		pos={"relative"}
+						// 		height={"230px"}
+						// 		_after={{
+						// 			transition: "all .3s ease",
+						// 			content: '""',
+						// 			w: "full",
+						// 			h: "full",
+						// 			pos: "absolute",
+						// 			top: 5,
+						// 			left: 0,
+						// 			backgroundImage: `url(${profile.url})`,
+						// 			filter: "blur(15px)",
+						// 			zIndex: -1,
+						// 		}}>
+						// 		{profile && <Image src={profile.url} />}
+						// 	</Box>
+						// </Box>
+
+						<Box
+							rounded={"lg"}
+							// mt={-12}
+							pos={"relative"}
+							height={"230px"}>
+							{profile && <Image src={profile.url} />}
 						</Box>
 					)}
 				</Stack>

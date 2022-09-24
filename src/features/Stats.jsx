@@ -1,23 +1,45 @@
+import { Center, chakra, Link, ListItem, UnorderedList } from "@chakra-ui/react";
+import {
+	AudioVisualizer,
+	AudioVisualizerCommonProps,
+	SpectrumVisualizer,
+	SpectrumVisualizerTheme,
+	WaveformVisualizer,
+	WaveformVisualizerTheme,
+} from "react-audio-visualizers";
+import { FaCog, FaGithub, FaLinkedin } from "react-icons/fa";
+
 export default function Stats() {
 	return (
-		<ul className="pip-head">
-			<li>
-				<b>Wg</b> 34/125
-			</li>
-			<li>
-				<b>HP</b> 89/110
-			</li>
-			<li>
-				<span className="fade-a">
-					<b>DT</b> 21
-				</span>
-				<span className="fade-b">
-					<b>DR</b> 11
-				</span>
-			</li>
-			<li>
-				<b>Caps</b> 1721
-			</li>
-		</ul>
+		<UnorderedList className="pip-head" fontSize={{ base: "xs", md: "15px" }}>
+			<ListItem>
+				<Link href="https://github.com/ahunnii">
+					<Center display={"inline-flex"} justifyContent="space-between" w={"100%"}>
+						<chakra.b>
+							<FaGithub />
+						</chakra.b>{" "}
+						ahunnii
+					</Center>
+				</Link>
+			</ListItem>
+			<ListItem>
+				<Link href="https://www.linkedin.com/in/ahunnii/">
+					<Center display={"inline-flex"} justifyContent="space-between" w={"100%"}>
+						<chakra.b>
+							<FaLinkedin />
+						</chakra.b>{" "}
+						ahunnii
+					</Center>
+				</Link>
+			</ListItem>
+			{/* <ListItem className="settings" >
+				<Center display={"inline-flex"} justifyContent="space-between" w={"100%"}>
+					<chakra.b>
+						<FaCog />
+					</chakra.b>{" "}
+					Settings
+				</Center>
+			</ListItem> */}
+		</UnorderedList>
 	);
 }

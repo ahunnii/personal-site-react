@@ -21,13 +21,14 @@ import {
 import React from "react";
 import { BsGithub, BsLinkedin, BsPerson, BsTwitter } from "react-icons/bs";
 import { MdEmail, MdOutlineEmail } from "react-icons/md";
+import { Stats } from "../features";
 import ContactMe from "../features/ContactMe";
-
 export default function Contact() {
 	const { hasCopied, onCopy } = useClipboard("andrew.hunn2@outlook.com");
 	return (
 		<Box className="tab-pane fade in" h={{ base: "100%", md: "100%" }}>
 			<h3 className="pip-title">Contact</h3>
+			<Stats />
 			<Box className="pip-body" w={"100%"} h={{ base: "100%", md: "100%" }}>
 				<Stack
 					align="center"
@@ -35,6 +36,7 @@ export default function Contact() {
 					direction={{ base: "row", md: "column" }}
 					className="side-menu"
 					w={{ base: "100%", md: "60px" }}
+					pt={{ base: 5, md: 0 }}
 					position={{ base: "relative", md: "fixed" }}>
 					<Tooltip label={hasCopied ? "Email Copied!" : "Copy Email"} closeOnClick={false} hasArrow>
 						<IconButton

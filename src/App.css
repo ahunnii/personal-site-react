@@ -887,6 +887,10 @@ a:not(.social-icon):hover,
 		margin-top: -2px;
 		padding-top: 10px;
 	}
+
+	.pip-head li.settings {
+		width: calc(100% - 10px);
+	}
 	.pip-head li:not(:nth-of-type(2))::before {
 		display: none;
 	}

@@ -14,7 +14,7 @@ export default function Featured({ projects }) {
 			display={"inline-flex"}
 			flexDir={"column"}
 			justifyContent={"center"}>
-			<chakra.div className="tab-pane fade in" h="90%">
+			<chakra.div className="tab-pane fade in" h="100%">
 				<h3 className="pip-title">Projects</h3>
 				<Stats />
 				{/* <chakra.div className="stats-page" w={"100%"} pt={{ base: 20, md: 0 }}>
@@ -53,7 +53,7 @@ export default function Featured({ projects }) {
 					{selected && (
 						<chakra.div
 							className="pip-body"
-							pt={{ base: 5, md: 0 }}
+							pt={{ base: 0, md: 0 }}
 							h={{ base: "100%", md: "auto" }}
 							overflowY={"scroll"}>
 							<ProjectDetails {...selected} setSelected={setSelected} />

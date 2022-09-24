@@ -6,7 +6,7 @@ export default function ProjectCard({ thumbnail, title }) {
 			<Box
 				role={"group"}
 				p={6}
-				maxW={"330px"}
+				maxW={{ base: "100%", md: "330px" }}
 				w={"full"}
 				// bg={useColorModeValue("white", "gray.800")}
 				bg={"rgba(var(--alt), 0.3)"}
@@ -18,7 +18,7 @@ export default function ProjectCard({ thumbnail, title }) {
 					rounded={"lg"}
 					mt={-12}
 					pos={"relative"}
-					height={"230px"}
+					height={{ base: "150px", md: 175 }}
 					_after={{
 						transition: "all .3s ease",
 						content: '""',
@@ -39,7 +39,7 @@ export default function ProjectCard({ thumbnail, title }) {
 					<Image
 						rounded={"lg"}
 						borderColor={"rgba(var(--alt), 0.3)"}
-						height={230}
+						height={{ base: "150px", md: 175 }}
 						width={282}
 						objectFit={"cover"}
 						src={thumbnail.url}
@@ -50,8 +50,8 @@ export default function ProjectCard({ thumbnail, title }) {
 						}}
 					/>
 				</Box>
-				<Stack pt={10} align={"center"}>
-					<Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
+				<Stack pt={8} align={"center"}>
+					<Heading fontSize={{ base: "lg", md: "xl" }} fontFamily={"body"} fontWeight={500}>
 						{title}
 					</Heading>
 				</Stack>

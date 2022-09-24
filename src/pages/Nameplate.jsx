@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, chakra, Heading, Stack, Text } from "@chakra-ui/react";
 
 import { Stats } from "../features";
 
@@ -11,11 +11,15 @@ export default function Nameplate({ title, description, resume }) {
 			<Box className="pip-body">
 				<Stack spacing={8} mx={"auto"} mt={"5rem"} maxW={"lg"} py={12} px={6}>
 					<Stack align={"center"}>
+						<Text fontSize={"md"} textAlign={"center"}>
+							Hey, I'm
+						</Text>
 						<Heading fontSize={"4xl"} textAlign={"center"}>
 							Andrew Hunn
 						</Heading>
-						<Text fontSize={"lg"} color={"gray.600"}>
-							{title || "Web Developer ✌️"}
+						<Text fontSize={"lg"} color={"gray.600"} textAlign={"center"}>
+							<chakra.span className="fade-a">{title || "Full Stack Web Developer 💻 "}</chakra.span>{" "}
+							<chakra.span className="fade-b">{"Taco Enthusiast 🌮"}</chakra.span>
 						</Text>
 						<Text textAlign={"center"} py={8}>
 							{description || "Fueled by coffee and tacos. Let's make something cool together."}
