@@ -41,8 +41,8 @@ function App() {
 				<Flex minH={"100vh"} align={"center"} justify={"center"}>
 					<Box className="frame">
 						<Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
-							<Box className="piece output " p={8}>
-								<Tabs className="pipboy">
+							<Box className="piece output " p={8} display={"inline-flex"} flexDir="column" justifyContent={"center"}>
+								<Tabs className="pipboy" h={{ base: "85vh", md: "100%" }} w={"100%"}>
 									<Navigation />
 									<TabPanels className="tab-content">
 										<TabPanel h={"100%"}>
