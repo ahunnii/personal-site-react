@@ -5,7 +5,7 @@ import { Stats } from "../features";
 export default function Nameplate({ title, description, resume }) {
 	return (
 		<div className="tab-pane fade in">
-			<h3 className="pip-title">Main</h3>
+			<h3 className="pip-title">Home</h3>
 
 			<Stats />
 			<Box className="pip-body">
@@ -20,14 +20,16 @@ export default function Nameplate({ title, description, resume }) {
 						<Text textAlign={"center"} py={8}>
 							{description || "Fueled by coffee and tacos. Let's make something cool together."}
 						</Text>
-						<Stack direction="row" spacing={4} align="center">
+						<Stack direction="row" spacing={2} align="center">
 							<Button
+								size={{ base: "sm", md: "md" }}
 								onClick={() => {
 									window.open("https://www.github.com/ahunnii", "_blank");
 								}}>
 								GitHub
 							</Button>
 							<Button
+								size={{ base: "sm", md: "md" }}
 								onClick={() => {
 									window.open("https://linkedin.com/in/ahunnii", "_blank");
 								}}>
@@ -35,6 +37,7 @@ export default function Nameplate({ title, description, resume }) {
 							</Button>
 
 							<Button
+								size={{ base: "sm", md: "md" }}
 								onClick={() => {
 									window.open(resume || "https://resume.creddle.io/resume/gkym669urqb", "_blank");
 								}}>

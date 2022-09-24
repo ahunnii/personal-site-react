@@ -58,7 +58,7 @@ export default function ContactMe() {
 		setToSend({ ...toSend, [e.target.name]: e.target.value });
 	};
 	return (
-		<Box borderRadius="lg" m={{ base: 5, md: 16, lg: 10 }} p={{ base: 5, lg: 16 }} width={"100%"}>
+		<Box borderRadius="lg" m={{ base: 0, md: 16, lg: 10 }} p={{ base: 0, lg: 16 }} width={"100%"}>
 			<LoadingIndicator isLoading={isLoading} />
 			{sent && (
 				<Box display="flex" justifyContent={"center"} flexDir={"column"}>
@@ -72,7 +72,7 @@ export default function ContactMe() {
 			)}
 			{!sent && !isLoading && (
 				<Box>
-					<Box bg="rgba(var(--alt), 0.3)" borderRadius="lg" p={8} shadow="base">
+					<Box bg="rgba(var(--alt), 0.3)" borderRadius="lg" p={{ base: 5, md: 8 }} shadow="base">
 						<VStack spacing={5} as="form" onSubmit={onSubmit}>
 							<FormControl isRequired>
 								<FormLabel>Name</FormLabel>
@@ -110,7 +110,7 @@ export default function ContactMe() {
 								<Textarea
 									name="message"
 									placeholder="Your Message"
-									rows={6}
+									rows={{ base: 4, md: 6 }}
 									resize="none"
 									value={toSend.message}
 									onChange={handleChange}

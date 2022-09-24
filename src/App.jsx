@@ -42,7 +42,7 @@ function App() {
 					<Box className="frame">
 						<Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
 							<Box className="piece output " p={8} display={"inline-flex"} flexDir="column" justifyContent={"center"}>
-								<Tabs className="pipboy" h={{ base: "85vh", md: "100%" }} w={"100%"}>
+								<Tabs className="pipboy" h={{ base: "80vh", md: "100%" }} w={"100%"}>
 									<Navigation />
 									<TabPanels className="tab-content">
 										<TabPanel h={"100%"}>
@@ -51,10 +51,10 @@ function App() {
 												{!isLoading && <Nameplate {...nameplateData} />}
 											</Center>
 										</TabPanel>
-										<TabPanel h={"100%"}>
+										<TabPanel h={{ base: "100%", md: "100%" }}>
 											<Featured projects={featuredProjects} />
 										</TabPanel>
-										<TabPanel>
+										<TabPanel h={{ base: "100%", md: "100%" }}>
 											<About profile={nameplateData?.profile} />
 										</TabPanel>
 										<TabPanel h={{ base: "100%", md: "100%" }}>

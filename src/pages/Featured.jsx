@@ -7,9 +7,15 @@ export default function Featured({ projects }) {
 	const [selected, setSelected] = useState(null);
 
 	return (
-		<Box className="tab-pane fade in" width={"100%"} h="100%">
-			<chakra.div className="tab-pane fade in" h="100%">
-				<h3 className="pip-title">Featured</h3>
+		<Box
+			className="tab-pane fade in"
+			width={"100%"}
+			h="100%"
+			display={"inline-flex"}
+			flexDir={"column"}
+			justifyContent={"center"}>
+			<chakra.div className="tab-pane fade in" h="90%">
+				<h3 className="pip-title">Projects</h3>
 				<Stats />
 				{/* <chakra.div className="stats-page" w={"100%"} pt={{ base: 20, md: 0 }}>
 					<div className="right-options">
@@ -19,7 +25,7 @@ export default function Featured({ projects }) {
 					</div>
 				</chakra.div> */}
 
-				<Center w={"100%"} h={{ base: "100%", md: "100%" }} className="pip-body" pt={{ base: 20, md: 0 }}>
+				<Center w={"100%"} h={{ base: "100%", md: "100%" }} className="pip-body" pt={{ base: 10, md: 0 }}>
 					{/* <h4>Select a project to view</h4> */}
 					{!selected && (
 						<SimpleGrid
@@ -45,7 +51,11 @@ export default function Featured({ projects }) {
 					)}
 
 					{selected && (
-						<chakra.div className="pip-body">
+						<chakra.div
+							className="pip-body"
+							pt={{ base: 5, md: 0 }}
+							h={{ base: "100%", md: "auto" }}
+							overflowY={"scroll"}>
 							<ProjectDetails {...selected} setSelected={setSelected} />
 						</chakra.div>
 					)}

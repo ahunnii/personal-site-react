@@ -1,16 +1,40 @@
-import { Box, Button, chakra, Flex, Image, ListItem, Progress, Stack, Text, UnorderedList } from "@chakra-ui/react";
+import {
+	Box,
+	Button,
+	chakra,
+	Flex,
+	Image,
+	Link,
+	ListItem,
+	Progress,
+	Stack,
+	Text,
+	UnorderedList,
+	Wrap,
+	WrapItem,
+} from "@chakra-ui/react";
 import { FaExternalLinkAlt, FaGithub, FaGithubAlt, FaLaptopCode } from "react-icons/fa";
+import { IoCaretBack } from "react-icons/io5";
 import Typewriter from "typewriter-effect";
 import "./ProjectDetails.scss";
 export default function ProjectDetails({ title, description, tech, url, gitHub, thumbnail, setSelected }) {
 	return (
-		<div className="project-section">
+		<Box className="project-section" w={"100%"}>
 			<div className="project-image">
-				<a>
-					<Image src={thumbnail.url} className="img" alt={thumbnail.description} />
-				</a>
+				<Link href={url}>
+					<Image
+						src={thumbnail.url}
+						className="img"
+						alt={thumbnail.description}
+						_hover={{
+							border: "3px solid ",
+							borderWidth: "2px 0",
+							transition: "all 0.2s ease",
+						}}
+					/>
+				</Link>
 			</div>
-			<div className="project-content">
+			<Box className="project-content" w={"100%"}>
 				<div>
 					<p className="project-overline">Featured Project</p>
 
@@ -25,31 +49,39 @@ export default function ProjectDetails({ title, description, tech, url, gitHub, 
 						</a>
 					</h3>
 
-					<div className="project-description">{description}</div>
+					<Box className="project-description" w={"100%"} fontSize={{ base: "sm", md: "lg" }}>
+						{description}
+					</Box>
 
 					{tech.length && (
-						<Stack className="project-tech-list" direction={"row"}>
-							{tech.map((tech, i) => (
-								<span key={i}>{tech}</span>
+						<Wrap className="project-tech-list" direction={"row"}>
+							{tech.map((item, i) => (
+								<WrapItem key={i}>
+									{item} {i < tech.length - 1 && "*"}
+								</WrapItem>
 							))}
-						</Stack>
+						</Wrap>
 					)}
 
-					<Stack className="project-links" direction={"row"}>
-						<a aria-label="GitHub Link" href={gitHub}>
+					<Stack className="project-links" direction={"row"} mt={3} fontSize={"xl"} w={"100%"}>
+						<Link aria-label="GitHub Link" href={gitHub} p={3}>
 							<FaGithub />
-						</a>
+						</Link>
 
-						<a aria-label="External Link" className="external" href={url}>
+						<Link aria-label="External Link" className="external" href={url} p={3}>
 							<FaExternalLinkAlt />
-						</a>
+						</Link>
 					</Stack>
 
-					<Button fontSize={"xl"} mt="5rem" onClick={() => setSelected(null)}>
-						> Back to Projects
+					<Button mt={5} onClick={() => setSelected(null)} w={{ base: "100%", md: "auto" }}>
+						<Box mr={2}>
+							{" "}
+							<IoCaretBack />
+						</Box>{" "}
+						Back to Projects
 					</Button>
 				</div>
-			</div>
-		</div>
+			</Box>
+		</Box>
 	);
 }

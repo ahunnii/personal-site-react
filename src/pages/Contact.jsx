@@ -97,7 +97,7 @@ export default function Contact() {
 				</Stack>
 
 				<Box className="stats-page" h={{ base: "100%", md: "100%" }}>
-					<Center h={{ base: "100%", md: "100%" }}>
+					<Center h={{ base: "90%", md: "100%" }}>
 						<ContactMe />
 					</Center>
 				</Box>

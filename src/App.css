@@ -945,7 +945,7 @@ a:not(.social-icon):hover,
 
 	.pipboy .pip-foot {
 		bottom: -18px;
-		width: 98%;
+		width: 100%;
 		margin: 0 1%;
 		left: 0;
 	}
@@ -958,6 +958,13 @@ a:not(.social-icon):hover,
 		overflow: hidden;
 		font-size: 0.85em;
 	}
+
+	.pip-foot span {
+		width: 20%;
+
+		margin: 0 2.25%;
+	}
+
 	.pip-foot span::after {
 		bottom: 16px;
 	}

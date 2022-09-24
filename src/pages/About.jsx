@@ -1,8 +1,14 @@
-import { Box, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, Center, Flex, Image, Stack, Text } from "@chakra-ui/react";
 
 export default function About({ profile }) {
 	return (
-		<div className="tab-pane fade in" title={"Items"}>
+		<Box
+			className="tab-pane fade in"
+			width={"100%"}
+			h="100%"
+			display={"inline-flex"}
+			flexDir={"column"}
+			justifyContent={"center"}>
 			<h3 className="pip-title">ABOUT</h3>
 			<ul className="pip-head">
 				<li>
@@ -18,10 +24,38 @@ export default function About({ profile }) {
 					<b>XP</b> 73.8%
 				</li>
 			</ul>
-			<Box className="pip-body">
-				<Stack direction={{ base: "column", md: "row" }} align="center">
-					<Box maxW={"75%"} maxH={"50vh"} overflowY={"scroll"} mt={20}>
+			<Center
+				w={"100%"}
+				h={{ base: "100%", md: "100%" }}
+				className="pip-body"
+				mt={{ base: "4rem", md: 0 }}
+				overflowY={"scroll"}>
+				<Stack direction={{ base: "column", md: "row" }} maxH={"75vh"} pt={{ base: "4rem", md: 0 }}>
+					<Box maxW={{ base: "100%", md: "75%" }}>
 						<Text> Hi, my name is Andrew Hunn</Text>
+						{profile && (
+							<Box w={{ base: "100%", sm: "75%", md: "100%" }} display={{ base: "flex", md: "none" }}>
+								<Box
+									rounded={"lg"}
+									my={3}
+									pos={"relative"}
+									height={"220px"}
+									_after={{
+										transition: "all .3s ease",
+										content: '""',
+										w: "full",
+										h: "full",
+										pos: "absolute",
+										top: 5,
+										left: 0,
+										backgroundImage: `url(${profile.url})`,
+										filter: "blur(15px)",
+										zIndex: -1,
+									}}>
+									{profile && <Image src={profile.url} height={{ base: "auto", sm: "230px" }} />}
+								</Box>
+							</Box>
+						)}
 						<Text mt={5}>
 							Nice to e-meet you! Before you scroll to the projects, I wanted to take this opportunity to tell you a bit
 							about myself.
@@ -38,7 +72,7 @@ export default function About({ profile }) {
 							When I have free time, I also freelance with small and local businesses to help update their website and
 							increase their online presence. I also enjoy hiking, gaming, and 3D modeling.
 						</Text>
-						<Text mt={5}>
+						<Text my={5}>
 							While my focus tends to be web development using React, Django, JavaScript, or Python, I am quick to learn
 							new languages and welcome the challenge of tackling different projects outside of my "comfort zone". Have
 							an idea of project and need help with bringing it to life? Want someone to create or update your online
@@ -46,7 +80,7 @@ export default function About({ profile }) {
 						</Text>
 					</Box>
 					{profile && (
-						<Box w={{ base: "75%", md: "100%" }}>
+						<Box w={{ base: "75%", md: "100%" }} display={{ base: "none", md: "flex" }}>
 							<Box
 								rounded={"lg"}
 								// mt={-12}
@@ -69,7 +103,7 @@ export default function About({ profile }) {
 						</Box>
 					)}
 				</Stack>
-			</Box>
-		</div>
+			</Center>
+		</Box>
 	);
 }
