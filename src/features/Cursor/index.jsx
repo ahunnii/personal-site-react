@@ -24,6 +24,11 @@ export default function Cursor() {
 		document.addEventListener("mouseenter", mouseEnterEvent);
 		document.addEventListener("mouseleave", mouseLeaveEvent);
 
+		document.addEventListener("touchstart", mouseOverEvent);
+		document.addEventListener("touchend", mouseOutEvent);
+		document.addEventListener("touchmove", mouseMoveEvent);
+
+		document.addEventListener("touchcancel", mouseLeaveEvent);
 		animateDotOutline();
 
 		return () => {
@@ -32,6 +37,12 @@ export default function Cursor() {
 			document.removeEventListener("mousemove", mouseMoveEvent);
 			document.removeEventListener("mouseenter", mouseEnterEvent);
 			document.removeEventListener("mouseleave", mouseLeaveEvent);
+
+			document.addEventListener("touchstart", mouseOverEvent);
+			document.addEventListener("touchend", mouseOutEvent);
+			document.addEventListener("touchmove", mouseMoveEvent);
+
+			document.addEventListener("touchcancel", mouseLeaveEvent);
 
 			cancelAnimationFrame(requestRef.current);
 		};

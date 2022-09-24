@@ -9,6 +9,19 @@
 	cursor: none !important;
 }
 
+/* @media (min-width: 62em) {
+	*:hover,
+	*:focus,
+	* {
+		cursor: none;
+	}
+
+	a,
+	button {
+		cursor: none;
+	}
+} */
+
 *::-webkit-scrollbar {
 	width: 12px;
 }
