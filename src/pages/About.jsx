@@ -46,7 +46,7 @@ export default function About({ profile }) {
 							// 		{profile && <Image src={profile.url} />}
 							// 	</Box>
 							// </Box>
-							<Image src={profile.url} my={2} display={{ base: "inline", md: "none" }} />
+							<Image src={profile.url} my={2} display={{ base: "inline", md: "none" }} alt="An image of Andrew Hunn" />
 						)}
 						<Text mt={5}>
 							Nice to e-meet you! Before you scroll to the projects, I wanted to take this opportunity to tell you a bit
@@ -100,7 +100,7 @@ export default function About({ profile }) {
 							pos={"relative"}
 							display={{ base: "none", md: "flex" }}
 							height={"230px"}>
-							{profile && <Image src={profile.url} />}
+							{profile && <Image src={profile.url} alt="An image of Andrew Hunn" />}
 						</Box>
 					)}
 				</Stack>

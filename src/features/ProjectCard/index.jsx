@@ -1,6 +1,8 @@
 import { Box, Center, Heading, Image, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 
 export default function ProjectCard({ thumbnail, title }) {
+	console.log(thumbnail);
+
 	return (
 		<Center py={{ base: 6, md: 6, lg: 6 }}>
 			<Box
@@ -43,6 +45,7 @@ export default function ProjectCard({ thumbnail, title }) {
 						width={282}
 						objectFit={"cover"}
 						src={thumbnail.url}
+						alt={thumbnail.description}
 						_groupHover={{
 							border: "3px solid ",
 							borderWidth: "2px 0",
