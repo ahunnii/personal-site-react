@@ -10,3 +10,7 @@
   for = "/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
+
+[build]
+  command = "npm install --legacy-peer-deps && npm run build"
+  publish = "build"  # or your output directory if different
