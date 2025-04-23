@@ -23,6 +23,7 @@ import { send } from "emailjs-com";
 import React, { useState } from "react";
 import { BsGithub, BsLinkedin, BsPerson, BsTwitter } from "react-icons/bs";
 import { MdEmail, MdOutlineEmail } from "react-icons/md";
+import { toast } from "sonner";
 import LoadingIndicator from "../LoadingIndicator";
 export default function ContactMe() {
 	const { hasCopied, onCopy } = useClipboard("example@example.com");
@@ -40,14 +41,16 @@ export default function ContactMe() {
 	const onSubmit = (e) => {
 		e.preventDefault();
 		setIsLoading(true);
-		send("service_h4fj8ad", "template_bskrn5y", toSend, "jtrwhfw0pI2zhHcuA")
+		send("service_6r9ato8", "template_bskrn5y", toSend, "jtrwhfw0pI2zhHcuA")
 			.then((response) => {
 				console.log("SUCCESS!", response.status, response.text);
 				setHasSent(true);
 				setIsLoading(false);
+				// toast.success("Email sent successfully");
 			})
 			.catch((err) => {
 				console.log("FAILED...", err);
+				// toast.error("Email sent failed");
 				setHasSent(false);
 				setIsLoading(false);
 				setIsError(true);

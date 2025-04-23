@@ -22,16 +22,30 @@ export default function ProjectDetails({ title, description, tech, url, gitHub, 
 		<Box className="project-section" w={"100%"}>
 			<div className="project-image">
 				<Link href={url}>
-					<Image
-						src={thumbnail.url}
-						className="img"
-						alt={thumbnail.description}
-						_hover={{
-							border: "3px solid ",
-							borderWidth: "2px 0",
-							transition: "all 0.2s ease",
-						}}
-					/>
+					<Box position="relative">
+						<Image
+							src={thumbnail.url}
+							className="img"
+							alt={thumbnail.description}
+							_hover={{
+								border: "3px solid ",
+								borderWidth: "2px 0",
+								transition: "all 0.2s ease",
+							}}
+						/>
+						<Box
+							position="absolute"
+							top="0"
+							left="0"
+							width="100%"
+							height="100%"
+							bg="rgba(18,16,13, 0.5)"
+							_hover={{
+								bg: "rgba(18,16,13, 0.1)",
+								transition: "all 0.2s ease",
+							}}
+						/>
+					</Box>
 				</Link>
 			</div>
 			<Box className="project-content" w={"100%"}>
@@ -64,9 +78,11 @@ export default function ProjectDetails({ title, description, tech, url, gitHub, 
 					)}
 
 					<Stack className="project-links" direction={"row"} mt={3} fontSize={"xl"} w={"100%"}>
-						<Link aria-label="GitHub Link" href={gitHub} p={3}>
-							<FaGithub />
-						</Link>
+						{gitHub && (
+							<Link aria-label="GitHub Link" href={gitHub} p={3}>
+								<FaGithub />
+							</Link>
+						)}
 
 						<Link aria-label="External Link" className="external" href={url} p={3}>
 							<FaExternalLinkAlt />

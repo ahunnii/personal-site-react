@@ -161,7 +161,7 @@ strong {
 	z-index: inherit;
 }
 
-@-webkit-keyframes crt-output {
+/* @-webkit-keyframes crt-output {
 	0% {
 		opacity: 0.9;
 	}
@@ -176,7 +176,7 @@ strong {
 	50% {
 		opacity: 1;
 	}
-}
+} */
 
 .scanlines {
 	background: -webkit-gradient(

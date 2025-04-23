@@ -32,14 +32,6 @@ export default function Stats() {
 					</Center>
 				</Link>
 			</ListItem>
-			{/* <ListItem className="settings" >
-				<Center display={"inline-flex"} justifyContent="space-between" w={"100%"}>
-					<chakra.b>
-						<FaCog />
-					</chakra.b>{" "}
-					Settings
-				</Center>
-			</ListItem> */}
 		</UnorderedList>
 	);
 }

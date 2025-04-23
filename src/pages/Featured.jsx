@@ -36,8 +36,9 @@ export default function Featured({ projects }) {
 							overflowY={{ base: "scroll" }}>
 							{projects && (
 								<>
-									{projects.map((project) => (
+									{projects.map((project, index) => (
 										<Box
+											key={index}
 											onClick={() => setSelected(project)}
 											my={{ base: 0, md: 0 }}
 											display={"inline-flex"}

@@ -30,7 +30,7 @@ export default function ProjectCard({ thumbnail, title }) {
 						top: 5,
 						left: 0,
 						backgroundImage: `url(${thumbnail.url})`,
-						filter: "blur(15px)",
+						filter: "blur(8px)",
 						zIndex: -1,
 					}}
 					_groupHover={{
