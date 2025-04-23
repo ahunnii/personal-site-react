@@ -6,4 +6,7 @@ export default defineConfig({
 	plugins: [react()],
 	envDir: "./src",
 	assetsInclude: "**/*.md",
+	build: {
+		outDir: "dist",
+	},
 });
