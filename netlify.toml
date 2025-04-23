@@ -11,6 +11,3 @@
     [headers.values]
     Access-Control-Allow-Origin = "*"
 
-[build]
-  command = "npm install && npm run build"
-  publish = "build"  # or your output directory if different
